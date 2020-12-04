@@ -30,11 +30,10 @@ target_link_libraries(npt_lib)
 find_package(SDPA REQUIRED)
 include_directories(${SDPA_INCLUDE_DIRS})
 #set(LIBS ${LIBS} ${SDPA_LIBRARIES})
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -funroll-all-loops -Wall -fPIC -funroll-all-loops")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -fPIC -funroll-all-loops")
 set(CMAKE_Fortran_FLAGS "-g -O2 -Wall -fPIC -funroll-all-loops")
 ##
 
-
 add_executable(demo test/demo.cpp)
-target_link_libraries(demo npt_lib ${Boost_LIBRARIES} ${SDPA_LIBRARIES})
+target_link_libraries(demo npt_lib ${SDPA_LIBRARIES})
 

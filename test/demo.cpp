@@ -49,34 +49,11 @@ int main(int argc, char** argv)
         // do the job
         // timer begin
         std::chrono::time_point<std::chrono::system_clock> time_start = std::chrono::system_clock::now();
-        construct_coeff_constraint(A, b);
         npt_pose(P1, P2, C, pt_number, X_sol, E_est, true);
         //timer end
         std::chrono::time_point<std::chrono::system_clock> time_end = std::chrono::system_clock::now();
         std::chrono::duration<double> time_spend = time_end - time_start;
         std::cout << "Runtime: " << time_spend.count()*1000.0 << " ms" << std::endl;
-
-        // check the results 
-        Eigen::Matrix<double, 9, 1> X_vec;
-        Eigen::Matrix<double, 9, 9> C_mat;
-        int k = 0;
-        for (int i = 0; i < 3; i++)
-        {
-            for (int j = 0; j < 3; j++)
-            {
-                X_vec(k) = E_est(i,j);
-                k++;
-            }
-        }
-        int dim = 9;
-        for (int i = 0; i < 9; i++)
-        {
-            for (int j = 0; j < 9; j++)
-            {
-                int idx = i*dim+j;
-                C_mat(i, j) = C[idx];
-            }
-        }
 
         // show the results
         if (1)

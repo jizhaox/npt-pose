@@ -1,8 +1,8 @@
 # https://github.com/coin-or/Gravity
 # https://github.com/coin-or/Gravity/blob/master/cmake/FindSDPA.cmake
 
-#set(SDPA_ROOT_DIR "$ENV{SDPA_ROOT_DIR}" CACHE PATH "SDPA root directory.")
-set(SDPA_ROOT_DIR /home/jizhao/sdpa)
+set(SDPA_ROOT_DIR "$ENV{SDPA_ROOT_DIR}" CACHE PATH "SDPA root directory.")
+#set(SDPA_ROOT_DIR /home/jizhao/sdpa)
 message("Looking for Sdpa in ${SDPA_ROOT_DIR}")
 
 if(APPLE)
