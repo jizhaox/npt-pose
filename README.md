@@ -32,6 +32,7 @@ cd npt-pose
 mkdir build && cd build
 cmake ..
 make
+export OPENBLAS_NUM_THREADS=1
 ./demo
 ```
 
